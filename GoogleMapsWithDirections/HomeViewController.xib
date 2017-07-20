@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="GoogleMapsWithDirections" customModuleProvider="target">
+            <connections>
+                <outlet property="mapView" destination="yzM-Vq-JK0" id="P8d-bJ-3zy"/>
+                <outlet property="segmentButton" destination="hmk-HS-Wcs" id="SPn-Wa-8GG"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yzM-Vq-JK0" customClass="GMSMapView">
+                    <rect key="frame" x="0.0" y="92" width="375" height="417"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xek-V6-cpp">
+                    <rect key="frame" x="15" y="521" width="345" height="30"/>
+                    <state key="normal" title="StartLocation"/>
+                    <connections>
+                        <action selector="openStartLocation:" destination="-1" eventType="touchUpInside" id="EAL-1X-Rrl"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHx-Sz-G4H">
+                    <rect key="frame" x="15" y="612" width="345" height="30"/>
+                    <state key="normal" title="Show Directions"/>
+                    <connections>
+                        <action selector="showDirection:" destination="-1" eventType="touchUpInside" id="xxu-bB-1q3"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQw-jm-Ivg">
+                    <rect key="frame" x="15" y="567" width="345" height="30"/>
+                    <state key="normal" title="EndLocation"/>
+                    <connections>
+                        <action selector="openDestinationLocation:" destination="-1" eventType="touchUpInside" id="dQd-tn-Z6f"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prasanth Google Maps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLw-PF-7ZQ">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="W1o-J2-MxC"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hmk-HS-Wcs">
+                    <rect key="frame" x="0.0" y="64" width="375" height="29"/>
+                    <segments>
+                        <segment title="Standerd"/>
+                        <segment title="Satlite"/>
+                        <segment title="Hybrid"/>
+                    </segments>
+                    <connections>
+                        <action selector="mapTypeButtonTapped:" destination="-1" eventType="valueChanged" id="3eN-Fv-fBs"/>
+                    </connections>
+                </segmentedControl>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="jLw-PF-7ZQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2lB-JC-lHd"/>
+                <constraint firstItem="gQw-jm-Ivg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="9Lz-YO-NqG"/>
+                <constraint firstItem="jLw-PF-7ZQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Bm1-TY-4Yk"/>
+                <constraint firstAttribute="trailing" secondItem="ZHx-Sz-G4H" secondAttribute="trailing" constant="15" id="CAy-sW-mtY"/>
+                <constraint firstItem="Xek-V6-cpp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="Gll-mi-z3E"/>
+                <constraint firstAttribute="trailing" secondItem="jLw-PF-7ZQ" secondAttribute="trailing" id="Iw9-G7-wzz"/>
+                <constraint firstItem="Xek-V6-cpp" firstAttribute="top" secondItem="yzM-Vq-JK0" secondAttribute="bottom" constant="12" id="N9w-e4-Ww7"/>
+                <constraint firstItem="hmk-HS-Wcs" firstAttribute="top" secondItem="jLw-PF-7ZQ" secondAttribute="bottom" id="NOz-uC-Sf6"/>
+                <constraint firstAttribute="trailing" secondItem="yzM-Vq-JK0" secondAttribute="trailing" id="O8x-v9-EH2"/>
+                <constraint firstAttribute="trailing" secondItem="Xek-V6-cpp" secondAttribute="trailing" constant="15" id="Yte-Nb-VQF"/>
+                <constraint firstItem="ZHx-Sz-G4H" firstAttribute="top" secondItem="gQw-jm-Ivg" secondAttribute="bottom" constant="15" id="dw5-8O-q6q"/>
+                <constraint firstAttribute="trailing" secondItem="hmk-HS-Wcs" secondAttribute="trailing" id="eji-wP-2pF"/>
+                <constraint firstAttribute="trailing" secondItem="gQw-jm-Ivg" secondAttribute="trailing" constant="15" id="jns-SU-LGe"/>
+                <constraint firstItem="ZHx-Sz-G4H" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="lGs-fP-hD9"/>
+                <constraint firstItem="gQw-jm-Ivg" firstAttribute="top" secondItem="Xek-V6-cpp" secondAttribute="bottom" constant="16" id="nJI-av-neA"/>
+                <constraint firstItem="yzM-Vq-JK0" firstAttribute="top" secondItem="hmk-HS-Wcs" secondAttribute="bottom" id="sLi-dj-48T"/>
+                <constraint firstAttribute="bottom" secondItem="ZHx-Sz-G4H" secondAttribute="bottom" constant="25" id="y9m-uc-z5e"/>
+                <constraint firstItem="yzM-Vq-JK0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yyW-rH-tvQ"/>
+                <constraint firstItem="hmk-HS-Wcs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zNn-e3-aqN"/>
+            </constraints>
+            <point key="canvasLocation" x="-77.5" y="4.5"/>
+        </view>
+    </objects>
+</document>
